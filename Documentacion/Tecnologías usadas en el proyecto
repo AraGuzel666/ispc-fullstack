@@ -2,5 +2,5 @@ HTML: para definir la estructura del contenido en el sitio web.
 CSS: utilizado para controlar la apariencia o presentación de los documentos definidos con HTML como los colores, la tipografía o el tamaño de los elementos, entre otros.
 JAVASCRIPT: para añadir características interactivas aL sitio web.
 MySQL: para la creacion de base de datos.
-PYTHON: va a trabajar con la BD y mediante el controlador conectarla al Frontend.
+PYTHON: va a trabajar con la BD, creacion de API REST, manejo de datos para mostrar en el frontend.
 SASS: para hacer el css dinamico y ampliar sus capacidades.
