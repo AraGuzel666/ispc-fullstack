@@ -16,12 +16,12 @@ class Conectar():
             print("¡No se conectó!",descripcionError)
 
 #PRIMERA OPERACIÓN DEL CRUD: CREATE O INSERT.
-    def InsertarValor(self,nombre, telefono, direccion):
+    def InsertarValor(self,idUsuario, usuario,  contraseña,  Tienda_idProducto):
         if self.conexion.is_connected():
             try:
                 cursor = self.conexion.cursor()
-                sentenciaSQL= "INSERT INTO tablaDeEjemplo VALUES(%s,%s,%s)"
-                data= (nombre, telefono,direccion)
+                sentenciaSQL= "INSERT INTO Usuario 'idUsuario', 'usuario',  'contraseña',  'Tienda_idProducto' VALUES ('1', 'Carlos', 'carlos123','13')"
+                data= (idUsuario, usuario,  contraseña,  Tienda_idProducto)
 
                 cursor.execute(sentenciaSQL,data)
                 self.conexion.commit()
