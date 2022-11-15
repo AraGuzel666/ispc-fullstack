@@ -28,31 +28,31 @@ class Conectar():
                 self.conexion.close()
 
             except:
-                print("No se pudo concectar a la base de datos")
+                print("No se pudo conectar a la base de datos")
    
 #SEGUNDA OPERACION DEL CRUD: READ O LEER
-    def BuscarObjeto(self, nombre):
+    def BuscarUsuario(self, usuario):
         if self.conexion.is_connected():
             try:
                 cursor = self.conexion.cursor()
-                sentenciaSQL= "SELECT * from tablaDeEjemplo where nombre like '%MAR%' "
+                sentenciaSQL= "SELECT * from Usuario where usuario like 'C' "
                 cursor.execute(sentenciaSQL)
                 resultadoREAD = cursor.fetchall()
                 self.conexion.close()
                 return resultadoREAD
 
             except:
-                print("No se pudo concectar a la base de datos")
+                print("No se pudo conectar a la base de datos")
 
 #CUARTA OPERACION DEL CRUD: DELETE O ELIMINAR
-    def EliminarObjeto(self,ID):
+    def EliminarObjeto(self,idUsuario):
         if self.conexion.is_connected():
             try:
                 cursor = self.conexion.cursor()
-                sentenciaSQL = "DELETE from tablaDeEjemplo where id = ID"
+                sentenciaSQL = "DELETE from Usuario where  id = idUsuario"
                 cursor.execute(sentenciaSQL)
 
                 self.conexion.commit()                
                 self.conexion.close()
             except:
-                print("No se pudo concectar a la base de datos")
+                print("No se pudo conectar a la base de datos")
