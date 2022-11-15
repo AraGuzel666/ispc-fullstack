@@ -16,7 +16,7 @@ class Conectar():
             print("¡No se conectó!",descripcionError)
 
 #PRIMERA OPERACIÓN DEL CRUD: CREATE O INSERT.
-    def InsertarValor(self,idUsuario, usuario,  contraseña,  Tienda_idProducto):
+    def InsertarValor(self, idUsuario, usuario, contraseña, Tienda_idProducto):
         if self.conexion.is_connected():
             try:
                 cursor = self.conexion.cursor()
