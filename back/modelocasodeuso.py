@@ -49,7 +49,7 @@ class Conectar():
         if self.conexion.is_connected():
             try:
                 cursor = self.conexion.cursor()
-                sentenciaSQL = "DELETE from Usuario where  id = idUsuario"
+                sentenciaSQL = "DELETE from Usuario where id = idUsuario"
                 cursor.execute(sentenciaSQL)
 
                 self.conexion.commit()                
