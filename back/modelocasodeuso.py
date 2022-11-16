@@ -26,7 +26,8 @@ class Conectar():
                 cursor.execute(sentenciaSQL,data)
                 self.conexion.commit()
                 self.conexion.close()
-
+                print("¡Se pudo insertar con éxito!")
+                
             except:
                 print("No se pudo conectar a la base de datos")
    
@@ -54,5 +55,7 @@ class Conectar():
 
                 self.conexion.commit()                
                 self.conexion.close()
+                print("¡Se pudo eliminar con éxito!")
+                
             except:
                 print("No se pudo conectar a la base de datos")
