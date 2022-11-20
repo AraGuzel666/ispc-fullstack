@@ -33,11 +33,39 @@
           </nav>
         <header class="header">
         <!--Logo Alanı-->
+    
         <div class="header__logo-alani">
             <a href="index.html"><img src="img/logo-white.png" alt="Pet Clinic" class="header__logo"></a>
         </div>
         </header>    
-     
+        <section class="iletisim-form-alani">
+            <div class="tablo">
+                <div class="tablo--1-ve-2">
+                    <h2 class="h2-baslik-anasayfa-ozel h-yazi-margin-kucuk"> Formulario de Contacto </h2>
+                    <form action="contactform.php" class="form" method="post">
+                        <div class="form__grup">
+                            <input type="text" class="form__input" placeholder="Nombre Completo" id="name" name="name" required>
+                            <label for="name" class="form__label">Nombre Completo</label>
+                        </div>
+                        <div class="form__grup">
+                            <input type="email" class="form__input" placeholder="Email" id="email" name="email" required>
+                            <label for="email" class="form__label">Email</label>
+                        </div>
+                        <div class="form__grup">
+                            <input type="text" class="form__input" placeholder="Teléfono" id="telefon" name="telefon" required>
+                            <label for="telefon" class="form__label">Teléfono</label>
+                        </div>
+                        <div class="form__grup">
+                            <textarea rows="3" cols="66" maxlength="90" name="message" placeholder="Tu Mensaje..." class="form__input"></textarea>
+                            <label for="message" class="form__label"> Mensaje...</label>
+                        </div>
+                        <div class="form__grup">
+                            <button class="buton buton--kirmizi">Enviar</button>
+                        </div><br>
+                    </form>
+                </div>
+            </div>
+        </section>
         <main>
             <!--İletişim İcon Alanı-->
             <section class="iletisim-icon-alani">
@@ -75,51 +103,7 @@
                 </div>
             </section>
             <!--İletişim Form Alanı-->
-            <section class="iletisim-form-alani">
-                <div class="tablo">
-                    <div class="tablo--1-ve-2">
-                        <h2 class="h2-baslik-anasayfa-ozel h-yazi-margin-kucuk"> Formulario de Contacto </h2>
-                        <form action="contactform.php" class="form" method="post">
-                            <div class="form__grup">
-                                <input type="text" class="form__input" placeholder="Nombre Completo" id="name" name="name" required>
-                                <label for="name" class="form__label">Nombre Completo</label>
-                            </div>
-                            <div class="form__grup">
-                                <input type="email" class="form__input" placeholder="Email" id="email" name="email" required>
-                                <label for="email" class="form__label">Email</label>
-                            </div>
-                            <div class="form__grup">
-                                <input type="text" class="form__input" placeholder="Teléfono" id="telefon" name="telefon" required>
-                                <label for="telefon" class="form__label">Teléfono</label>
-                            </div>
-                            <div class="form__grup">
-                                <textarea rows="3" cols="66" maxlength="90" name="message" placeholder="Tu Mensaje..." class="form__input"></textarea>
-                                <label for="message" class="form__label"> Mensaje...</label>
-                            </div>
-                            <div class="form__grup">
-                                <button class="buton buton--kirmizi">Enviar</button>
-                            </div><br>
-                        </form>
-                    </div>
-                    <div class="tablo--1-ve-2">
-                        <h2 class="h2-baslik-anasayfa-ozel h-yazi-margin-kucuk"> Conócenos </h2>
-                        <p class="paragraf">
-                            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. 
-                         </p> 
-                         <ul class="hizmetdetay">
-                            <li>Macarena Amarilla</li>
-                            <li>María Paz Mario</li>
-                            <li>María Valentina Muratore</li>
-                            <li>Florencia Córdoba</li>
-                            <li>Francisco Pereyra</li>
-                            <li>Facundo Perez</li>
-                            <li>Aram Guzelian</li>
-                            <li>Jesus Bilchi</li>
-                            <li>Alumno 9</li>
-                        </ul> 
-                    </div>
-                </div>
-            </section>
+           
         </main>
         <!--Footer Alanı-->
         <footer class="footer">
