@@ -59,7 +59,7 @@
                     <ul class="list-members">
                         <li class="member">
                           <div class="member-image">
-                            <img src="img/" alt="team">
+                            <img src="img/mapi.jpg" alt="team">
                           </div>
                           <div class="member-info">
                             <h3 class="r1">María Paz</h3>
@@ -143,7 +143,7 @@
                             <h3 class="r1">Facundo</h3>
                             <br>
                             <div class="social-link">
-                              <a href="" class="fab fa-linkedin-in"></a>
+                              <a href="https://www.linkedin.com/in/facundo-perez-203132175" class="fab fa-linkedin-in"></a>
                             </div>
                           </div>
                         </li>
@@ -286,6 +286,60 @@
                     if (uzunluk > 300) $("#top").fadeIn(500);
                     else { $("#top").fadeOut(500); }
                 });
+            </script>
+            <script>
+
+  const nameInput= document.querySelector("#name");
+  const emailInput= document.querySelector("#email");
+  const numberInput = document.querySelector("#telefono")
+  const messageInput= document.querySelector("#message");
+
+
+  function validateForm(){
+      const regexEmail =/^\w+([.-]?\w+)@\w+([.-]?\w+)(.\w{2,3})+$/;
+      const regexName= /^[a-zA-Z]{3,}$/;
+      const regexNumber= /\(?([0-9]{3})\)?([ .-]?)([0-9]{3})\2([0-9]{4})/
+
+      let errorNameInput = regexName.test(nameInput.value)?
+      null : 'Mensaje sobre nombre mal ingresado'
+
+      let errorEmailInput = (regexEmail.test(emailInput.value)) ?
+      null : 'Mensaje sobre mail mal ingresado'
+
+      let errorPhoneInput = (regexNumber.test(numberInput.value)) ?
+      null : 'Mensaje sobre telefono mal ingresado'
+
+      let errorMessageInput = (messageInput.value.length >0) ?
+      null : 'Ingresar un mensaje'
+
+      if(!errorNameInput && !errorEmailInput && !errorPhoneInput && !errorMessageInput){
+          document.getElementById("myForm").submit();
+      }            
+      
+      else if(errorNameInput && errorEmailInput && errorMessageInput){
+          html.innerHTML=
+          `<div class="error">controlar los campos</div>`
+      }
+      else if(errorNameInput){
+          html.innerHTML=
+          `<div class="error">controlar nombre</div>`
+
+      }
+      else if(errorEmailInput){
+          html.innerHTML=
+          `<div class="error">controlar email</div>`
+
+      }
+    else if(errorPhoneInput){
+          html.innerHTML=
+          `<div class="error">controlar email</div>`
+
+      }
+      else if(errorMessageInput){
+              html.innerHTML=
+              `<div class="error">controlar mensaje</div>`
+      }
+      } 
             </script>
         </footer>
         </main>

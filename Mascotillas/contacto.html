@@ -42,25 +42,25 @@
             <div class="tablo">
                 <div class="tablo--1-ve-2">
                     <h2 class="h2-baslik-anasayfa-ozel h-yazi-margin-kucuk"> Formulario de Contacto </h2>
-                    <form id="myForm" action="contactform.php" class="form" method="POST">
+                    <form id="myForm" class="form">
                         <div class="form__grup">
-                            <input type="text" class="form__input" placeholder="Nombre Completo" id="name" name="name" required>
                             <label for="name" class="form__label">Nombre Completo</label>
+                            <input type="text" class="form__input" placeholder="Nombre Completo" id="name" name="name" required>
                         </div>
                         <div class="form__grup">
-                            <input type="email" class="form__input" placeholder="Email" id="email" name="email" required>
                             <label for="email" class="form__label">Email</label>
+                            <input type="email" class="form__input" placeholder="Email" id="email" name="email" required>
                         </div>
                         <div class="form__grup">
-                            <input type="text" class="form__input" placeholder="Teléfono" id="telefon" name="telefon" required>
                             <label for="telefon" class="form__label">Teléfono</label>
+                            <input type="text" class="form__input" placeholder="Teléfono" id="telefon" name="telefono" required>
                         </div>
                         <div class="form__grup">
-                            <textarea rows="3" cols="66" maxlength="90" name="message" placeholder="Tu Mensaje..." class="form__input"></textarea>
                             <label for="message" class="form__label"> Mensaje...</label>
+                            <textarea rows="3" cols="66" maxlength="90" name="message" placeholder="Tu Mensaje..." id="message"  class="form__input"></textarea>
                         </div>
                         <div class="form__grup">
-                            <button class="buton buton--kirmizi">Enviar</button>
+                            <button class="buton buton--kirmizi" onclick="validateForm()">Enviar</button>
                         </div><br>
                     </form>
                 </div>
