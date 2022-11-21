@@ -39,32 +39,44 @@
         </div>
         </header>    
         <section class="iletisim-form-alani">
-            <div class="tablo">
-                <div class="tablo--1-ve-2">
+            <div class="tablo" >
+                    <div id="mensajeExito"  class="tablo--1-ve-2" style="display: none">
+                        
+                        
+                        <h2 class="h2-baslik-anasayfa-ozel h-yazi-margin-kucuk">Formulario enviado correctamente</h2
+                        
+                        <a class="buton buton--kirmizi" onclick="mostrarForm()">Volver a enviar formulario</a>
+                    </div>
+             
+                <div class="tablo--1-ve-2" id="formulario">
                     <h2 class="h2-baslik-anasayfa-ozel h-yazi-margin-kucuk"> Formulario de Contacto </h2>
-                    <form id="myForm" class="form">
+                    <div id="myForm" class="form">
+
+                        <div class="cartel" id="cartel"></div>
+                        <br>
+            
                         <div class="form__grup">
-                            <label for="name" class="form__label">Nombre Completo</label>
-                            <input type="text" class="form__input" placeholder="Nombre Completo" id="name" name="name" required>
+                            <input type="text" id="name" name="name" class="form__input" placeholder="Nombre Completo"/>
                         </div>
+                        <br>
+
                         <div class="form__grup">
-                            <label for="email" class="form__label">Email</label>
-                            <input type="email" class="form__input" placeholder="Email" id="email" name="email" required>
+                            <input type="email" id="email" name="email" class="form__input" placeholder="Email"/>
                         </div>
+                        <br>
+
                         <div class="form__grup">
-                            <label for="telefon" class="form__label">Teléfono</label>
-                            <input type="text" class="form__input" placeholder="Teléfono" id="telefon" name="telefono" required>
+                        <textarea id="message" name="message" class="form__input" placeholder=" Mensaje..."></textarea>
                         </div>
-                        <div class="form__grup">
-                            <label for="message" class="form__label"> Mensaje...</label>
-                            <textarea rows="3" cols="66" maxlength="90" name="message" placeholder="Tu Mensaje..." id="message"  class="form__input"></textarea>
-                        </div>
-                        <div class="form__grup">
-                            <button class="buton buton--kirmizi" onclick="validateForm()">Enviar</button>
-                        </div><br>
-                    </form>
-                </div>
-            </div>
+                        <br>
+                
+                        <button class="buton buton--kirmizi" id=btn onclick="validateForm()">Enviar
+                        </button>
+                    </div>
+                    <br>
+                </div>   </div>
+                <br>
+          
         </section>
         <main>
             <!--İletişim İcon Alanı-->
@@ -102,6 +114,9 @@
                     </div>
                 </div>
             </section>
+            <br>
+            <br>
+            <br>
             <!--İletişim Form Alanı-->
            
         </main>
@@ -225,6 +240,61 @@
                     if (uzunluk > 300) $("#top").fadeIn(500);
                     else { $("#top").fadeOut(500); }
                 });
+            </script>
+            <script>
+                const nameInput= document.querySelector("#name");
+                const emailInput= document.querySelector("#email");
+                const messageInput= document.querySelector("#message");
+                const html = document.querySelector('#cartel');
+                function mostrarForm(){
+                    document.getElementById('formulario').setAttribute('style', 'display: inline-block')
+                    document.getElementById('mensajeExito').setAttribute('style', 'display: none')
+                }
+
+                function validateForm(){
+                    var regexEmail =/^\w+([.-]?\w+)@\w+([.-]?\w+)(.\w{2,3})+$/;
+                    var regexName= /^[a-zA-Z]{3,}$/;
+
+                    let errorNameInput = regexName.test(nameInput.value)?
+                    null : '¿Estas seguro de que ingresaste bien el nombre?'
+
+                    let errorEmailInput = (regexEmail.test(emailInput.value)) ?
+                    null : '¿Estas seguro de que ingresaste bien el mail?'
+
+                    let errorMessageInput = (messageInput.value.length >0) ?
+                    null : 'Ingresa un mensaje'
+
+                    if(!errorNameInput && !errorEmailInput && !errorMessageInput){
+                        document.getElementById('formulario').setAttribute('style', 'display: none')
+                        document.getElementById('mensajeExito').setAttribute('style', 'display: inline-block')
+                    }
+                    
+                    else if(errorNameInput && errorEmailInput && errorMessageInput){
+                        html.innerHTML=
+                        `<div class="error">Corrobore los campos</div>`
+
+                    }
+                    else if(errorNameInput){
+                        html.innerHTML=
+                        `<div class="error">Corrobore su nombre</div>`
+            
+
+                    }
+                    else if(errorEmailInput){
+                        html.innerHTML=
+                        `<div class="error">Corrobore su mail</div>`
+
+
+                    }
+                    else if(errorMessageInput){
+                            html.innerHTML=
+                            `<div class="error">Por favor ingrese un mensaje</div>`
+
+
+                    }
+
+                    }
+
             </script>
         </footer>
         </main>

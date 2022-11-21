@@ -16,6 +16,10 @@
 1000 ve üzeri: Büyük masaüstü
 1200 - 1800  : Normal stiller için
 */
+.visible{
+  background-color: red !important
+}
+
 .h-yazi-ortalama {
   text-align: center; }
   @media only screen and (max-width: 40em) {
@@ -4711,3 +4715,4 @@ header:hover .owl-next {
     transform: rotate(360deg); } }
 
 /*# sourceMappingURL=style.css.map */
+
